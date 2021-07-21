@@ -21,3 +21,16 @@ var Sejour = /** @class */ (function () {
     };
     return Sejour;
 }());
+var SejourService = /** @class */ (function () {
+    function SejourService(_sejours) {
+        this._sejours = _sejours;
+        var sejour1 = new Sejour("Bamako", 1000);
+        var sejour2 = new Sejour("Tokyo", 600);
+        var sejour3 = new Sejour("New York", 500);
+        this._sejours = [sejour1, sejour2, sejour3];
+    }
+    SejourService.prototype.recherCheSejourParNom = function (nom) {
+        return this._sejours.find(function (sejour) { return sejour.getNom() === nom; });
+    };
+    return SejourService;
+}());
